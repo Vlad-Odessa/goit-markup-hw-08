@@ -1,0 +1,39 @@
+.auth-nav {
+  display: flex;
+  margin-left: 305px;
+  align-items: center;
+
+  & a:hover,
+  & a:focus {
+    fill: $accentColor;
+    color: $accentColor;
+  }
+
+  & .item + .item {
+    margin-left: 30px;
+  }
+}
+
+.auth-nav .item {
+  fill: $textColor2;
+}
+
+.auth-icon {
+  margin-right: 10px;
+}
+
+.envelope-icon,
+.tel-icon {
+  display: flex;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14px;
+  letter-spacing: 0.02em;
+  color: $textColor2;
+  transition: color 250ms $cubic-bezier, fill 250ms $cubic-bezier;
+}
+
+
+

@@ -1,0 +1,215 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-color: #2f303a;
+}
+
+.footer-wrap {
+  @extend %container;
+  display: flex;
+  align-items: baseline;
+}
+
+.logo-footer {
+  display: inline-block;
+  margin-bottom: 20px;
+
+  color: $textColor3;
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  transition: color 250ms $cubic-bezier;
+
+  &:hover,
+  &:focus {
+    color: $accentColor;
+  }
+}
+
+.logo-style {
+  color: $accentColor;
+}
+
+.second-part {
+  margin-left: 69px;
+}
+
+.address {
+  display: flex;
+  margin-bottom: 9px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: $textColor3;
+}
+
+.contacts-email {
+  display: flex;
+  margin-bottom: 9px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms $cubic-bezier;
+}
+
+.contacts-tel {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms $cubic-bezier;
+}
+
+.contacts-email:hover,
+.contacts-tel:hover,
+.contacts-email:focus,
+.contacts-tel:focus {
+  color: $accentColor;
+}
+
+.social-network {
+  display: flex;
+
+  & .item + .item {
+    margin-left: 10px;
+  }
+
+  & .item {
+    transition: background-color 250ms $cubic-bezier;
+    border-radius: 50%;
+  }
+}
+
+.social-network .inst {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/inst.svg);
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.social-network .twit {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/twit.svg);
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.social-network .face {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/face.svg);
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.social-network .link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/link.svg);
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.social-network .item:hover,
+.social-network .item:focus {
+  background-color: $accentColor;
+  border-radius: 50%;
+}
+
+.third-part {
+  margin-left: 94px;
+}
+
+.invitation {
+  display: flex;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $textColor3;
+}
+
+.footer-label {
+  display: block;
+  margin-right: 12px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+
+  & input {
+    padding: 16px 15px;
+
+    width: 358px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: transparent;
+    color: $textColor3;
+  }
+}
+
+.footer-item {
+  display: flex;
+}
+
+.button-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 28px 10px 29px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  border: none;
+  color: $textColor3;
+  background: $accentColor;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 250ms $cubic-bezier, color 250ms $cubic-bezier,
+    box-shadow 250ms $cubic-bezier;
+
+  &:hover,
+  &:focus {
+    background-color: #355d91;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.icon-send {
+  margin-left: 10px;
+  fill: $textColor3;
+}

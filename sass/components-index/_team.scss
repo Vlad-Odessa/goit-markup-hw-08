@@ -1,0 +1,103 @@
+.team {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: #f5f4fa;
+}
+
+.team-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+
+.team-position {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  color: $textColor2;
+}
+
+.list-team {
+  // @extend %container;
+  // display: flex;
+  // justify-content: center;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  & .item {
+    @media screen and (min-width: 768px) {
+      width: 354px;
+      // height: 260px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      // display: flex;
+      // justify-content: center;
+      width: 270px;
+      // height: 260px;
+      border-radius: 0px 0px 4px 4px;
+      background: $textColor3;
+      box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+    }
+
+    // border-radius: 0px 0px 4px 4px;
+    // background: $textColor3;
+    // box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    //   0px 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  // & .item + .item {
+  //   margin-left: 30px;
+  // }
+}
+
+.image-team {
+  margin-bottom: 30px;
+}
+
+.team-nav {
+  // @media screen and (min-width: 1200px) {
+  //   display: flex;
+  //   width: 270px;
+  // height: 260px;
+  // }
+  display: flex;
+  justify-content: space-between;
+  padding: 0 122px 24px 122px;
+
+  // @media screen and (min-width: 768px) {
+  // padding: 0 122px 24px 122px;
+  // }
+}
+
+.social-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  fill: #afb1b8;
+  border-radius: 50%;
+  transition: fill 250ms $cubic-bezier, background-color 250ms $cubic-bezier;
+
+  &:hover,
+  &:focus {
+    fill: $textColor3;
+    background-color: $accentColor;
+  }
+}

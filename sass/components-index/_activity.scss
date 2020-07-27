@@ -1,0 +1,42 @@
+.function {
+  // @extend %container;
+  // margin-bottom: 0;
+  // margin-left: auto;
+  // margin-right: auto;
+  padding-bottom: 94px;
+
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.function-title {
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+  position: absolute;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: $textColor3;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.list-occupation {
+  display: flex;
+
+  & .item {
+    display: block;
+    position: relative;
+  }
+
+  & .item + .item {
+    margin-left: 30px;
+  }
+}

@@ -1,0 +1,33 @@
+.header {
+  // @extend %container;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // margin-right: auto;
+  // margin-left: auto;
+  // max-width: 1600px;
+  border: 1px solid #ececec;
+
+  
+}
+
+.logo {
+  margin-right: 85px;
+
+  color: #000000;
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+
+  transition: color 250ms $cubic-bezier;
+
+  &:hover,
+  &:focus {
+    color: $accentColor;
+  }
+
+  &-style {
+    color: $accentColor;
+  }
+}

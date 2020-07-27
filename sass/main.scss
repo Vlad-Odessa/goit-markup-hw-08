@@ -1,0 +1,47 @@
+// базовая стилизация по тегам
+@import "./utils/base";
+
+// переменные: цвета, шришты,
+@import "./utils/variables";
+
+// шаблоны
+@import "./utils/placeholders";
+
+// логотип в шапке
+// @import "./general/header-logo";
+
+// навигация
+// @import "./general/header-nav";
+
+// нижнее подчеркивание навагации
+// @import "./general/header-nav-underline";
+
+// контакты в шапке
+// @import "./general/header-contacts";
+
+// блок герой
+// @import "./components-index/hero";
+
+// заголовки секций
+@import "./components-index/title-sections";
+
+// секция преимущества
+@import "./components-index/advantages";
+
+// виды деятельности
+@import "./components-index/activity";
+
+// команда разработчиков
+@import "./components-index/team";
+
+// постоянные клиенты
+@import "./components-index/clients";
+
+// модальное окно
+// @import "./components-index/modal";
+
+// примеры работ
+// @import "./components-portfolio/work-examples";
+
+// футер
+// @import "./general/footer";

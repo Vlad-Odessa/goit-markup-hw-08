@@ -1,0 +1,1415 @@
+/* цвет основного текста (больше всего заголовков) #212121 */
+
+/* вторичный текс (описание преимуществ) #757575 */
+
+/* белый цвет текста #FFFFFF */
+
+/* акцент (заливки, ховер) #2196F3 */
+
+/* надо заменить цвета на кастомные свойства */
+
+/* :root */
+
+/* стилизация по тегам -----------------------------------*/
+
+/* html {
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: inherit;
+} */
+
+* {
+  box-sizing: inherit;
+  /* box-sizing: border-box; */
+}
+
+body {
+  background-color: #ffffff;
+  color: #212121;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.03em;
+  /* box-sizing: inherit; */
+}
+
+/* убирает все точки со всех списках без исключений */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* убирает точки со списков точечно, там где это нужно 
+.list {
+  list-style: none;
+} надо добавить в класс, через пробел (class="... list")*/
+
+/* убрал во всех ссылках подчеркивание */
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+textarea {
+  resize: none;
+}
+/* ------------------------------------------------------- */
+.container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* padding-top: 93px; */
+  /* padding-bottom: 94px; */
+  /* outline: 1px solid red; */
+}
+/* надо секцию оборачивать в див и применять стиль контейнер
+<section>
+<div class=""> */
+
+/* стили логотипа----------------------------------------- */
+.logo {
+  margin-right: 85px;
+
+  color: #000000;
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  /* transition: background-color (если есть бэкграунд) 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* эффект перехода за 250мсек с одного цвета на другой  */
+}
+
+.logo-style {
+  color: #2196f3;
+}
+
+.logo:hover,
+.logo:focus {
+  color: #2196f3;
+  /* если задать transition на ховер, то отбратного перехода не будет  */
+}
+
+/* .link.nav {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: #757575;
+} */
+
+/* шапка/навигация ------------------------------------------ */
+.header {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid #ececec;
+}
+
+.main-nav,
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav .nav-item + .nav-item {
+  margin-left: 50px;
+}
+
+/* .site-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 85px;
+} */
+
+/* 3 способа - убираем маржин (отступ), крайняя геометрия всегда должна быть очищена*/
+.nav-item:last-child {
+  margin-right: 0;
+}
+/* одним стилем задем всем элементам маржин 50пк, а последнему 0 
+.site-nav .item:not(:last-child) {
+  margin-right: 50px;
+} 
+.site-nav .item + item {
+  margin-left: 50px
+}
+задаем маржин слева всем, кроме первого */
+
+.nav-item-link {
+  position: relative;
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  align-items: center;
+
+  color: #212121;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item-link:hover,
+.nav-item-link:focus {
+  color: #2196f3;
+}
+/* можно применить стили сразу ко всем ссылка одновременно:
+.site-nav a:hover (без link)
+при помощи link можно задавать опрделеной ссылке свойства
+можно сделать еще и так:
+.site-nav a:hover,
+.site-nav a:focus {
+  color: #2196f3;
+} */
+
+/* подсвечивает текущию страницу, ставится один на странице */
+.nav-item-link.current {
+  color: #2196f3;
+}
+
+/* нижнее подчеркивание навигации ===============*/
+.nav-item-link.current::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  opacity: 1;
+  /* transform: scaleX(0.5); */
+  transform: scaleX(1);
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #2196f3;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item-link::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  /* transform: scaleX(0.5); */
+  transform: scaleX(0);
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #2196f3;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item-link:hover::after,
+.nav-item-link:focus::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.nav-item-link::before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  /* transform: scaleX(0.5); */
+  transform: scaleX(0);
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #2196f3;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item-link:hover::before,
+.nav-item-link:focus::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+/* ================================ */
+
+.auth-nav {
+  display: flex;
+  margin-left: 305px;
+  align-items: center;
+}
+
+.auth-icon {
+  margin-right: 10px;
+}
+
+.auth-nav .item {
+  fill: #757575;
+}
+
+.envelope-icon,
+.tel-icon {
+  display: flex;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14px;
+  letter-spacing: 0.02em;
+  color: #757575;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-nav .item + .item {
+  margin-left: 30px;
+}
+
+/* .envelope-icon:hover,
+.envelope-icon:focus,
+.tel-icon:hover,
+.tel-icon:focus {
+  fill: #2196f3;
+  color: #2196f3;
+}  тоже рабочий способ*/
+
+.auth-nav a:hover,
+.auth-nav a:focus {
+  fill: #2196f3;
+  color: #2196f3;
+}
+
+/* .auth-nav .email::before {
+  display: inline-flex;
+  content: "";
+
+  width: 16px;
+  height: 11.2px;
+  margin-right: 10px;
+  background-image: url(../images/envelope.svg);
+} */
+
+/* .auth-nav .tel::before {
+  display: inline-flex;
+  content: "";
+
+  width: 10px;
+  height: 14.94px;
+  margin-right: 10px;
+  background-image: url(../images/smartphone.svg);
+  background-position: center;
+} */
+
+/* Заголовок/герой -------------------------------------------*/
+.hero-container {
+  /* max-width: 1600px;
+  height: 600px; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.8),
+      rgba(47, 48, 58, 0.8)
+    ),
+    url(../images/hero.jpg);
+  background-position: center;
+  background-color: #2f303a;
+}
+
+.hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  /* outline: 3px solid red; */
+}
+
+.button-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-primary {
+  /* display: inline-block; */
+  padding: 10px 32px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  border: none;
+  /* text-align: center; */
+  color: #ffffff;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-primary:hover,
+.button-primary:focus {
+  background-color: #3070c4;
+  color: #212121;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* .button.primary {
+  display: inline-block;
+  padding: 10px 32px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  text-align: center;
+  color: #ffffff;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+} */
+
+/* заголовки секций -------------------------------------------- */
+.section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+
+/* секция преимущества/функции ----------------------------------*/
+.container.advantages {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.heading-advantages {
+  display: none;
+}
+
+.advantages-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.advantages-text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #757575;
+}
+
+.list-advantages {
+  display: flex;
+}
+
+/* добавляет внешний отступ (маржин) слева в 30пик всем, кроме первого элемента */
+.list-advantages .item + .item {
+  margin-left: 30px;
+}
+
+.bg-advantages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  height: 120px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+}
+
+.list-advantages .item {
+  width: 270px;
+}
+
+/* .list-features .item::before {
+  display: block;
+  content: "";
+  margin-bottom: 30px;
+
+  height: 120px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+/* .list-features .item:nth-child(1)::before {
+  background-image: url(../images/antenna.svg);
+} */
+
+/* .list-features .item:nth-child(2)::before {
+  background-image: url(../images/clock.svg);
+} */
+
+/* .list-features .item:nth-child(3)::before {
+  background-image: url(../images/diagram.svg);
+} */
+
+/* .list-features .item:nth-child(4)::before {
+  background-image: url(../images/astronaut.svg);
+} */
+
+/* виды деятельности --------------------------------------------- */
+.container.function {
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 94px;
+}
+
+.list-occupation .item {
+  display: block;
+  position: relative;
+}
+
+.function-title {
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+  position: absolute;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.list-occupation {
+  display: flex;
+}
+
+/* каждый левый маржин , кроме первого, в 30пик */
+.list-occupation .item + .item {
+  margin-left: 30px;
+}
+
+/* команда разработчиков ------------------------------------------ */
+.team {
+  /* max-width: 1600px; */
+  padding-top: 94px;
+  padding-bottom: 94px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: #f5f4fa;
+}
+
+/* .team {
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+/* .container.team {
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.team-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+
+.team-position {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  color: #757575;
+}
+
+.list-team {
+  display: flex;
+  justify-content: center;
+}
+
+.image-team {
+  margin-bottom: 30px;
+}
+
+.list-team .item {
+  width: 270px;
+  border-radius: 0px 0px 4px 4px;
+  background: #ffffff;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.list-team .item + .item {
+  margin-left: 30px;
+}
+
+.team-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px 24px 32px;
+  /* padding-bottom: 24px; */
+}
+
+/* в спрайте, если есть, надо удалять высоту и ширину */
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0;
+  border: none; */
+  width: 44px;
+  height: 44px;
+  fill: #afb1b8;
+  border-radius: 50%;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  fill: #ffffff;
+  background-color: #2196f3;
+}
+
+/* .team-nav .team-item + .team-item {
+  margin-left: 10px;
+} */
+
+/* .team-nav .inst {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/instagram.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/* .team-nav .twit {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/twitter.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/* .team-nav .face {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/facebook.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/* .team-nav .link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/linkedin.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/* постоянные клиенты -------------------------------------------- */
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.container.clients {
+  margin-bottom: 0;
+  margin-left: auto;
+  /* margin-right: auto; */
+}
+
+.list-clients {
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.list-clients .item + .item {
+  margin-left: 30px;
+}
+
+.bg-clients {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 168px;
+  height: 90px;
+  border: 1px solid;
+  border-radius: 4px;
+  color: #afb1b8;
+  fill: #afb1b8;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.list-clients a:hover,
+.list-clients a:focus {
+  fill: #2196f3;
+  color: #2196f3;
+}
+
+/* .list-clients .item::before {
+  display: block;
+  content: "";
+
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+/* .list-clients .item:nth-child(2)::before {
+  background-image: url(../images/client_2_logo.svg);
+} */
+
+/* .list-clients .item:nth-child(3)::before {
+  background-image: url(../images/client_3_logo.svg);
+} */
+
+/* .list-clients .item:nth-child(4)::before {
+  background-image: url(../images/client_4_logo.svg);
+} */
+
+/* .list-clients .item:nth-child(5)::before {
+  background-image: url(../images/client_5_logo.svg);
+} */
+
+/* .list-clients .item:nth-child(6)::before {
+  background-image: url(../images/client_6_logo.svg);
+} */
+
+/* портфолио - фильтр ---------------------------------------------*/
+.size {
+  padding-top: 93px;
+  padding-bottom: 94px;
+}
+
+.example-works {
+  display: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 34px;
+}
+
+/* добавляет внешний отступ (маржин) слева в 8пик всем, кроме первого элемента */
+.button .item + .item {
+  margin-left: 8px;
+}
+
+.button .secondary {
+  margin: 0;
+  padding: 6px 22px;
+  /* min-width: 73px;
+  min-height: 38px; */
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  border-radius: 4px;
+  border: none;
+  color: #212121;
+  text-align: center;
+  background: #f5f4fa;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button .secondary:hover,
+.button .secondary:focus {
+  background-color: #2196f3;
+  color: #ffffff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* портфолио - примеры работ ------------------------------------- */
+.item-info {
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  padding: 20px 24px;
+  /* position: absolute; */
+  /* overflow: hidden; */
+  /* cursor: pointer; */
+}
+
+.title-compani {
+  margin-top: 0;
+  margin-bottom: 4px;
+  /* padding-left: 24px;
+  padding-right: 24px; */
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: #212121;
+}
+
+.type-work {
+  margin: 0;
+  /* padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 20px; */
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87;
+  color: #757575;
+}
+
+/* портфолио грид ------------------------------------------------- */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* переход на следующую строку */
+}
+
+/* эффект появляющегося фона при наведении курсора + .text-compani */
+/* .overlay::before {
+  display: block;
+  content: "";
+  position: absolute;
+
+  width: 100%;
+  height: 294px;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+  transition: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
+
+/* .overlay:hover::before {
+  opacity: 1;
+} */
+
+/* .project-list .item:hover .text-compani {
+  opacity: 1;
+} */
+/* ==================================================== */
+
+.project-item {
+  display: block;
+  margin-bottom: 30px;
+  margin-right: 30px;
+
+  width: 370px;
+  background: #ffffff;
+}
+
+.item-link {
+  display: block;
+}
+
+.project-list .overlay {
+  position: relative;
+  border-radius: 5px 5px 0px 0px;
+  overflow: hidden;
+}
+
+.project-item .text-compani {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  opacity: 0;
+  top: 100%;
+  left: 0;
+
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.56;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 63px 24px;
+  border-radius: 5px 5px 0px 0px;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-list .item-link:hover .text-compani,
+.project-list .item-link:focus .text-compani {
+  transform: translateY(-100%) translateX(0);
+  opacity: 1;
+}
+
+/* у каждого третьего элеиента маржин равен 0 */
+/* можно задать маржин карточке по кругу - 15пик, а не 30 справа */
+.project-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* у последних трех карточках маржин равен 0 */
+.project-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
+.project-item:hover,
+.project-item:focus {
+  color: #2196f3;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+/* модальное окно ------------------------------------------------ */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 528px;
+  height: 581px;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  /* события указателя, позволяет backdrop пропускать через себя клики мышки */
+}
+
+.title-modal {
+  display: flex;
+  justify-content: center;
+  box-sizing: content-box;
+  margin-bottom: 30px;
+  padding: 40px 40px 0 40px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+}
+
+.form-field {
+  position: relative;
+  display: block;
+  margin-bottom: 28px;
+  padding: 0 40px 0 40px;
+
+  color: #757575;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+}
+
+.icon-field {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 56px;
+  transform: translateY(-50%);
+}
+
+.form-input:focus + .icon-field {
+  fill: #2196f3;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 82px;
+  transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field input {
+  box-sizing: border-box;
+  padding: 12px 18px 12px 42px;
+
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-label.textarea {
+  position: absolute;
+  top: 20px;
+  left: 57px;
+  transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field textarea {
+  box-sizing: border-box;
+  padding: 12px 16px;
+
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+/* стилизация текста */
+/* .form-field input,
+textarea::placeholder {
+  color: #757575;
+} */
+
+/* стилизация текста */
+/* .form-field input,
+textarea::placeholder {
+  color: #757575;
+} */
+
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+  color: #2196f3;
+  transform: translateX(-25px) translateY(-40px);
+}
+
+.form-type:focus ~ .form-label.textarea,
+.form-type:not(:placeholder-shown) ~ .form-label.textarea {
+  color: #2196f3;
+  transform: translateY(-40px);
+}
+
+/* checkbox =================================*/
+.checkbox {
+  /* не используем - display: none; */
+  /* new school - ни хера не работает!!!
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute; */
+
+  /* old school */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 40px 0 40px;
+  margin-bottom: 25px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+}
+
+.checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 8.38px;
+  border: solid 2px #212121;
+  border-radius: 4px;
+}
+
+.checkbox:checked + .checkbox-icon {
+  border-color: transparent;
+  background-color: #2196f3;
+  background-image: url("../images/icon_check.svg");
+  background-size: contain;
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.checkbox-link {
+  text-decoration: underline;
+  color: #2196f3;
+}
+/* ================================= */
+
+.button-modal {
+  padding: 10px 32px;
+  width: 200px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-modal:hover,
+.button-modal:focus {
+  background-color: #355d91;
+  color: #212121;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.button-close {
+  display: inline-block;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  fill: #212121;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-close:hover,
+.button-close:focus {
+  fill: #2196f3;
+}
+
+/* футер ----------------------------------------------------------*/
+.footer {
+  /* display: flex; */
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-color: #2f303a;
+  /* max-width: 1600px; */
+  /* margin-right: auto; */
+}
+
+.footer-wrap {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo-footer {
+  display: inline-block;
+  margin-bottom: 20px;
+
+  color: #ffffff;
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-style {
+  color: #2196f3;
+}
+
+.logo-footer:hover,
+.logo-footer:focus {
+  color: #2196f3;
+}
+
+.second-part {
+  margin-left: 69px;
+  /* padding-top: 72px;
+  padding-bottom: 100px; */
+  /* margin-right: 94px; */
+}
+
+.address {
+  display: flex;
+  margin-bottom: 9px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #ffffff;
+}
+
+.contacts-email {
+  display: flex;
+  margin-bottom: 9px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts-tel {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts-email:hover,
+.contacts-tel:hover,
+.contacts-email:focus,
+.contacts-tel:focus {
+  color: #2196f3;
+}
+
+.social-network {
+  display: flex;
+}
+
+.social-network .item + .item {
+  margin-left: 10px;
+}
+
+.social-network .item {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+}
+
+.social-network .inst {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/inst.svg);
+  /* background: #ffffff; */
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.social-network .twit {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/twit.svg);
+  /* background: #ffffff; */
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.social-network .face {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/face.svg);
+  /* background: #ffffff; */
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.social-network .link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/link.svg);
+  /* background: #ffffff; */
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.social-network .item:hover,
+.social-network .item:focus {
+  background-color: #2196f3;
+  border-radius: 50%;
+}
+
+.third-part {
+  /* display: flex; */
+  margin-left: 94px;
+  /* padding-top: 72px; */
+}
+
+.invitation {
+  display: flex;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.footer-label {
+  display: block;
+  margin-right: 12px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-label input {
+  padding: 16px 15px;
+
+  width: 358px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.footer-item {
+  display: flex;
+}
+
+.button-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 28px 10px 29px;
+  /* width: 200px; */
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-footer:hover,
+.button-footer:focus {
+  background-color: #355d91;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.icon-send {
+  margin-left: 10px;
+  fill: #ffffff;
+}
+
+/* .container.type {
+  background-color: #2f303a;
+} */
+
+/* .developer {
+  display: flex;
+  justify-content: center;
+  padding-top: 18px;
+  padding-bottom: 21px;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.4);
+} */
