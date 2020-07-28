@@ -6,9 +6,15 @@
 }
 
 .footer-wrap {
-  @extend %container;
-  display: flex;
-  align-items: baseline;
+  // @extend %container;
+  // display: flex;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  // align-items: baseline;
 }
 
 .logo-footer {
@@ -33,11 +39,16 @@
 }
 
 .second-part {
-  margin-left: 69px;
+  // display: flex;
+  // flex-wrap: wrap-reverse;
+  justify-content: center;
+  margin-bottom: 60px;
+  // margin-left: 69px;
 }
 
 .address {
   display: flex;
+  justify-content: center;
   margin-bottom: 9px;
 
   font-style: normal;
@@ -49,6 +60,7 @@
 
 .contacts-email {
   display: flex;
+  justify-content: center;
   margin-bottom: 9px;
 
   font-style: normal;
@@ -60,6 +72,10 @@
 }
 
 .contacts-tel {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -77,6 +93,7 @@
 
 .social-network {
   display: flex;
+  justify-content: center;
 
   & .item + .item {
     margin-left: 10px;
@@ -143,11 +160,13 @@
 }
 
 .third-part {
-  margin-left: 94px;
+  // width: 100%;
+  // margin-left: 94px;
 }
 
 .invitation {
   display: flex;
+  justify-content: center;
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -158,30 +177,49 @@
 }
 
 .footer-label {
-  display: block;
-  margin-right: 12px;
+  @media screen and (max-width: 1199px) {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  // width: 100%;
+
+  // margin-right: 12px;
 
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+}
 
-  & input {
-    padding: 16px 15px;
+// .footer-item label {
+//   width: 100%;
+// }
 
-    width: 358px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    background-color: transparent;
-    color: $textColor3;
-  }
+.footer-input {
+  // display: flex;
+  // flex-wrap: wrap;
+  padding: 16px 15px;
+
+  // width: 100%;
+  // width: 358px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: transparent;
+  color: $textColor3;
 }
 
 .footer-item {
-  display: flex;
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  // width: 100%;
 }
 
 .button-footer {

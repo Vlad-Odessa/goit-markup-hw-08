@@ -1,5 +1,4 @@
 .size {
-  @extend %container;
   padding-top: 93px;
   padding-bottom: 94px;
 }
@@ -10,12 +9,36 @@
 
 .button {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 34px;
 
-  & .item + .item {
-    margin-left: 8px;
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+    & .item {
+      margin-bottom: 15px;
+    }
+
+    & .item:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    & .item + .item {
+      margin-left: 8px;
+    }
+
+    & .item:nth-child(4n) {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    & .item + .item {
+      margin-left: 8px;
+    }
   }
 }
 
