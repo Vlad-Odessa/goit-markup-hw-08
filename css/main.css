@@ -19,6 +19,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  margin-right: 0;
 }
 
 textarea {
@@ -142,12 +143,6 @@ textarea {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .list-advantages .item {
-    width: 270px;
-  }
-}
-
 @media screen and (max-width: 1199px) {
   .list-advantages .item.item:not(:last-child) {
     margin-bottom: 30px;
@@ -157,6 +152,12 @@ textarea {
 @media screen and (max-width: 1199px) {
   .list-advantages .item.item:nth-child(3n) {
     margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .list-advantages .item {
+    width: 270px;
   }
 }
 
@@ -246,6 +247,10 @@ textarea {
   color: #757575;
 }
 
+.list-team .item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
 @media screen and (min-width: 768px) {
   .list-team {
     display: -webkit-box;
@@ -253,22 +258,21 @@ textarea {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin-right: 0;
+    max-width: 354px;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .list-team .item {
-    width: 354px;
-  }
+.list-team .item {
+  border-radius: 0px 0px 4px 4px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 @media screen and (min-width: 1200px) {
-  .list-team .item {
+  .list-team {
     width: 270px;
-    border-radius: 0px 0px 4px 4px;
-    background: #ffffff;
-    -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
-            box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -280,10 +284,10 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 122px 24px 122px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 0 24px 0;
 }
 
 .social-icon {
@@ -314,35 +318,65 @@ textarea {
   padding-bottom: 94px;
 }
 
-.list-clients {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.list-clients .item {
-  margin-bottom: 30px;
-}
-
-.list-clients .item:nth-last-child(-n + 2) {
-  margin-bottom: 0;
-}
-
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 767px) {
   .list-clients {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
   .list-clients .item {
+    width: calc((100% - 30px) / 2);
+    margin-right: 30px;
+  }
+  .list-clients .item:nth-child(2n) {
+    margin-right: 0;
+  }
+  .list-clients .item:not(:nth-last-child(-n + 2)) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .list-clients {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .list-clients .item {
+    width: calc((100% - 60px) / 3);
+    margin-right: 30px;
+  }
+  .list-clients .item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .list-clients .item:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .list-clients {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .list-clients .item {
+    margin-right: 0;
     margin-bottom: 0;
   }
   .list-clients .item + .item {
@@ -367,6 +401,7 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   width: 170px;
+  width: 100%;
   height: 90px;
   border: 1px solid;
   border-radius: 4px;

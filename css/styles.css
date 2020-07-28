@@ -1040,12 +1040,6 @@ textarea::placeholder {
   color: #757575;
 } */
 
-/* стилизация текста */
-/* .form-field input,
-textarea::placeholder {
-  color: #757575;
-} */
-
 .form-input:focus ~ .form-label,
 .form-input:not(:placeholder-shown) ~ .form-label {
   color: #2196f3;
