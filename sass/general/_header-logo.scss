@@ -6,7 +6,7 @@
   // margin-right: auto;
   // margin-left: auto;
   // max-width: 1600px;
-  border: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
 
   
 }
@@ -29,5 +29,13 @@
 
   &-style {
     color: $accentColor;
+  }
+
+  @media screen and (max-width: 1199px) {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: 81px;
   }
 }

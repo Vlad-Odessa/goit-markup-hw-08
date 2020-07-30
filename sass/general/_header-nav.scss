@@ -4,13 +4,19 @@
   align-items: center;
 }
 
+.site-nav {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
 .site-nav .nav-item + .nav-item {
   margin-left: 50px;
 }
 
-.nav-item:last-child {
-  margin-right: 0;
-}
+// .nav-item:last-child {
+//   margin-right: 0;
+// }
 
 .nav-item-link {
   position: relative;
