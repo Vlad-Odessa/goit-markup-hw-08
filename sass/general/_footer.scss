@@ -6,6 +6,12 @@
 }
 
 .footer-wrap {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   // @extend %container;
   // @media screen and (min-width: 768px) {
   //   .first-part,

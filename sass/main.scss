@@ -7,6 +7,9 @@
 // шаблоны
 @import "./utils/placeholders";
 
+// меню мобильного
+@import "./general/mobile-menu";
+
 // логотип в шапке
 @import "./general/header-logo";
 
@@ -20,7 +23,7 @@
 @import "./general/header-contacts";
 
 // блок герой
-// @import "./components-index/hero";
+@import "./components-index/hero";
 
 // заголовки секций
 @import "./components-index/title-sections";

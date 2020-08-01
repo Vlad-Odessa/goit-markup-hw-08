@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   // @extend %container;
   // display: flex;
   // justify-content: center;
@@ -12,7 +13,9 @@
 }
 
 .logo {
-  margin-right: 85px;
+  // display: flex;
+  // justify-content: space-between;
+  // margin-right: 85px;
 
   color: #000000;
   font-family: Raleway;
