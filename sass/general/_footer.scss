@@ -9,7 +9,7 @@
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   // @extend %container;
@@ -49,6 +49,8 @@
   }
 
   @media screen and (max-width: 1199px) {
+    display: flex;
+    justify-content: center;
     font-size: 24px;
   }
 }
@@ -57,13 +59,17 @@
   color: $accentColor;
 }
 
-.second-part {
+.first-part {
   @media screen and (max-width: 1199px) {
     margin-bottom: 60px;
   }
-  // display: flex;
-  // flex-wrap: wrap-reverse;
-  // justify-content: center;
+}
+
+.second-part {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+  
   @media screen and (min-width: 1200px) {
     margin-left: 78px;
   }
@@ -81,10 +87,10 @@
   color: $textColor3;
 }
 
-.contacts-email {
+.contacts-footer .item{
   display: flex;
-  justify-content: center;
-  margin-bottom: 9px;
+  
+  // margin-bottom: 9px;
 
   font-style: normal;
   font-weight: 400;
@@ -92,26 +98,15 @@
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
   transition: color 250ms $cubic-bezier;
-}
 
-.contacts-tel {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
+  &.item:hover,
+  &.item:focus {
+    color: $accentColor;
+  }
 
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  color: rgba(255, 255, 255, 0.6);
-  transition: color 250ms $cubic-bezier;
-}
-
-.contacts-email:hover,
-.contacts-tel:hover,
-.contacts-email:focus,
-.contacts-tel:focus {
-  color: $accentColor;
+  @media screen and (max-width: 1199px) {
+    justify-content: center;
+  }
 }
 
 .social-network {
@@ -181,15 +176,6 @@
   background-color: $accentColor;
   border-radius: 50%;
 }
-
-// .first-part,
-// .second-part {
-//   .logo-footer {
-//   @media screen and (min-width: 768px) {
-//     width: calc(50% / 2);
-//     flex-wrap: nowrap;
-//   }
-// }
 
 .third-part {
   @media screen and (min-width: 1200px) {
