@@ -19,14 +19,16 @@
 }
 
 .modal {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  @media screen and (max-width: 767px) {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+
+  width: 95%;
+
+  @media screen and (min-width: 480px) {
     width: 450px;
   }
   
-  // height: 609px;
 
   background: $textColor3;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -36,17 +38,8 @@
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms $cubic-bezier;
 
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-
-    width: 450px;
-    height: 609px;
-  }
-
-  @media screen and (min-width: 1200px) {
-    position: absolute;
+    @media screen and (min-width: 1200px) {
+    // position: absolute;
     top: 50%;
     left: 50%;
 
